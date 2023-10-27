@@ -14,9 +14,8 @@ import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:http/http.dart' as http;
 
-//user agora_rtc_engine: ^5.3.0 & http:
+//user agora_rtc_engine: ^5.3.0 
 class VoiceChannelWidget extends StatefulWidget {
   const VoiceChannelWidget({
     Key? key,
