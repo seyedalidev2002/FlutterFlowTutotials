@@ -1,15 +1,18 @@
 // Automatic FlutterFlow imports
-import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/actions/actions.dart' as action_blocks;
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom widgets
-import '/custom_code/actions/index.dart'; // Imports custom actions
+import '/custom_code/widgets/index.dart'; // Imports other custom widgets
 import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
+
+import '/backend/backend.dart';
+import '/actions/actions.dart' as action_blocks;
+import 'index.dart'; // Imports other custom widgets
+import '/custom_code/actions/index.dart'; // Imports custom actions
 
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:crop_your_image/crop_your_image.dart';
@@ -29,7 +32,7 @@ class ImageCropper extends StatefulWidget {
   final double? width;
   final double? height;
   final FFUploadedFile? imageFile;
-  final Future<dynamic> Function()? callBackAction;
+  final Future Function(String? url)? callBackAction;
   final String? currentUserId;
 
   @override
@@ -59,9 +62,8 @@ class _ImageCropperState extends State<ImageCropper> {
                       final path = _getStoragePath(_firebasePathPrefix(),
                           widget.imageFile!.name!, false, 0);
                       uploadData(path, image).then((value) {
-                        FFAppState().croppedImage = value!;
                         print('image cropped');
-                        widget.callBackAction!.call();
+                        widget.callBackAction!.call(value!);
                         loading = false;
                       });
                       // add error handling here
@@ -177,3 +179,5 @@ class _ImageCropperState extends State<ImageCropper> {
 
   String _firebasePathPrefix() => 'users/${widget.currentUserId}/uploads';
 }
+// Set your widget name, define your parameter, and then add the
+// boilerplate code using the green button on the right!
