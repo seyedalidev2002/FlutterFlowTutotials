@@ -1,4 +1,5 @@
 // Automatic FlutterFlow imports
+import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,9 +10,6 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import '/backend/backend.dart';
-import 'index.dart'; // Imports other custom widgets
-
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:crop_your_image/crop_your_image.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,13 +17,13 @@ import '/backend/firebase_storage/storage.dart';
 
 class ImageCropper extends StatefulWidget {
   const ImageCropper({
-    Key? key,
+    super.key,
     this.width,
     this.height,
     this.imageFile,
     this.callBackAction,
     this.currentUserId,
-  }) : super(key: key);
+  });
 
   final double? width;
   final double? height;
@@ -34,7 +32,7 @@ class ImageCropper extends StatefulWidget {
   final String? currentUserId;
 
   @override
-  _ImageCropperState createState() => _ImageCropperState();
+  State<ImageCropper> createState() => _ImageCropperState();
 }
 
 class _ImageCropperState extends State<ImageCropper> {
