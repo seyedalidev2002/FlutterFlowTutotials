@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:crop_your_image/crop_your_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '/backend/firebase_storage/storage.dart';
