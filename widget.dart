@@ -29,7 +29,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart' as gmf;
 import 'package:http/http.dart' as http;
 
 import 'dart:math' as Math;
+/*
+*****************Ali Ideas Note*******************
 
+pubspec dependencies : 
+google_maps_cluster_manager_2: ^3.0.0+1
+widget_to_marker: 1.0.5
+
+*/
 Map<String, Uint8List> _imageCache = {};
 
 class Place with gm.ClusterItem {
