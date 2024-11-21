@@ -1,0 +1,10 @@
+{
+"page": <page>,
+  "hitsPerPage": <hitsPerPage>,
+  "latitude": <lat>,
+  "longitude": <lng>,
+  "radiusInMeters": <locationRadius>,
+"searchTerm": "<searchTerm>",
+  "query": "<filterQuery>",
+  "indexName": "<indexName>"
+}
