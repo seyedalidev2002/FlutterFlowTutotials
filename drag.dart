@@ -17,8 +17,10 @@ import 'dart:typed_data';
 import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-/// Struct to hold uploaded file information
-
+/*
+  Ali Ideas Comment
+  flutter_dropzone: ^4.2.1
+*/
 /// Drag and Drop Upload Widget
 class DragAndDrop extends StatefulWidget {
   const DragAndDrop({
