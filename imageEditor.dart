@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+//pro_image_editor: ^5.4.2
 import 'package:pro_image_editor/pro_image_editor.dart';
 
 class ImageEditor extends StatefulWidget {
