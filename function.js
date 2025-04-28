@@ -14,14 +14,15 @@ exports.scheduledNotifications = functions.pubsub.schedule('every 1 minutes').on
     const now = admin.firestore.Timestamp.now();
     const notificationRef = admin.firestore().collection('scheduled_notifications');
     const sentNotificationRef = admin.firestore().collection('notifications');
-
+    //For the sake of tutorial simplicy the query is kept simple so no indexes are needed
     const snapshot = await notificationRef.where('next_send_date', '<=', now).get();
 
     for (let i = 0; i < snapshot.size; i++) {
         const doc = snapshot.docs[i];
-        const { notification_title, notification_description, repeat_in_mins ,user_ref} = doc.data();
+        const { notification_title, notification_description, repeat_in_mins ,user_ref , is_active} = doc.data();
 
-
+        if (is_active === flase)
+            continue;
 
         await sendFFPushNotification(notification_title, notification_description , user_ref);
 
