@@ -3,7 +3,12 @@ const admin = require('firebase-admin');
 const moment = require('moment-timezone');
 
 
-  
+/*
+Ali Ideas Note: 
+Add this package to your package.json 
+"moment-timezone": "^0.5.48"
+
+*/
 
 exports.scheduledNotifications = functions.pubsub.schedule('every 1 minutes').onRun(async (context) => {
     const now = admin.firestore.Timestamp.now();
